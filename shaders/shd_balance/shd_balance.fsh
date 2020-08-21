@@ -9,7 +9,7 @@ uniform float u_vAmount;
 
 void main()
 {               
-    gl_FragColor = texture2D(gm_BaseTexture, v_vTexcoord);
+    gl_FragColor = v_vColour*texture2D(gm_BaseTexture, v_vTexcoord);
     gl_FragColor.rgb *= mix(vec3(1.0), u_vTint, u_vAmount);
     
     float value = (gl_FragColor.r + gl_FragColor.g + gl_FragColor.b)/3.0;  
